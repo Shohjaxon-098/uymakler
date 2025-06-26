@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:uymakler/feauteres/auth/presentation/pages/forgot_password_page.dart';
 import 'package:uymakler/feauteres/auth/presentation/pages/sign_up_page.dart';
 import 'package:uymakler/feauteres/auth/presentation/widgets/auth_field_widget.dart';
 import 'package:uymakler/feauteres/auth/presentation/widgets/remember_me_checkbox_widget.dart';
@@ -52,12 +53,20 @@ class SignInPage extends StatelessWidget {
             SizedBox(height: 24),
             SubmitButtonWidget(),
             SizedBox(height: 24),
-            Text(
-              'Parolni unutdingizmi?',
-              style: TextStyle(
-                color: Color(0xff6A5AE0),
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                );
+              },
+              child: Text(
+                'Parolni unutdingizmi?',
+                style: TextStyle(
+                  color: Color(0xff6A5AE0),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             Spacer(),
